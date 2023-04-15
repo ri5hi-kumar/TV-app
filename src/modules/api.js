@@ -3,16 +3,14 @@ const tvFunction = () => {
         const endpoint = `https://api.tvmaze.com/search/shows?q=${key}`
         try{
             const response = await fetch(endpoint);
-            const ans = await response.json();
-            const image = document.createElement('img');
-            image.src = ans[0].show.image.medium;
-            document.body.append(image);
+            const data = await response.json();
+            return data;
         }
         catch(error){
             alert(error);
+            return null;
         }
     }
-
     return {getdata};
 }
 
