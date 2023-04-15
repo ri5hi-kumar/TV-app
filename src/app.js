@@ -1,4 +1,4 @@
-import tvFunction from './modules/api';
+import tvFunction from './modules/tvApi';
 import view from './modules/view';
 import './style.css';
 
