@@ -15,7 +15,9 @@ const screen = view();
 
 searchButton.addEventListener('click', async () => {
     if(searchInput.value === "") return;
+    screen.clearData();
     const searchData = await search.getdata(searchInput.value);
     screen.setSearch(searchData);
+    searchInput.value = "";
 })
 

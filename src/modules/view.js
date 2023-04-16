@@ -1,14 +1,28 @@
 const view = () => {
-    function setSearch(data){
-        if(!data) return;
+    const searchResult = document.getElementById('searchResult');
 
-        console.log(data);
-        const image = document.createElement('img');
-        image.src = data[0].show.image.medium;
-        document.body.append(image);
+    function setData(shows) {
+        for (let result of shows) {
+            if (result.show.image) {
+                const image = document.createElement('img');
+                image.src = result.show.image.medium;
+                searchResult.appendChild(image);
+            }
+        }
     }
 
-    return {setSearch}
+    function clearData(){
+        while (searchResult.firstChild) {
+            searchResult.removeChild(searchResult.firstChild);
+        }
+    }
+
+    function setSearch(data) {
+        if (!data) return;
+        setData(data);
+    }
+
+    return { setSearch, clearData }
 }
 
 
