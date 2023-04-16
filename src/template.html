@@ -8,10 +8,18 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
-    <h3>Enter Keyword</h3>
-    <form action="" id="searchForm">
-        <input type="text" name="key" id="word">
-        <button type="submit" id="btn">Search</button>
-    </form>
+    <header class="page-name">TV App</header>
+
+    <main class="main">
+        <h3 class="top">Enter Keyword</h3>
+        <form class="form" id="searchForm" novalidate>
+            <input type="text" name="key" id="word" placeholder="Enter TV show name">
+            <button type="submit" id="btn">Search</button>
+        </form>
+
+        <div class="search-result" id="searchResult">
+
+        </div>
+    </main>
 </body>
 </html>
